@@ -1,0 +1,358 @@
+
+
+BFS
+00 :   OnInitializeVertex  A
+01 :   OnInitializeVertex  B
+02 :   OnInitializeVertex  C
+03 :   OnInitializeVertex  D
+04 :   OnInitializeVertex  E
+05 :   OnInitializeVertex  F
+06 :   OnInitializeVertex  G
+07 :   OnInitializeVertex  H
+08 :     OnDiscoverVertex  A
+09 :      OnExamineVertex  A
+10 :        OnExamineEdge  A -> B
+11 :           OnTreeEdge  A -> B
+12 :     OnDiscoverVertex  B
+13 :        OnExamineEdge  A -> C
+14 :           OnTreeEdge  A -> C
+15 :     OnDiscoverVertex  C
+16 :       OnFinishVertex  A
+17 :      OnExamineVertex  B
+18 :        OnExamineEdge  B -> A
+19 :        OnNonTreeEdge  B -> A
+20 :     OnBlackTargeEdge  B -> A
+21 :        OnExamineEdge  B -> D
+22 :           OnTreeEdge  B -> D
+23 :     OnDiscoverVertex  D
+24 :        OnExamineEdge  B -> E
+25 :           OnTreeEdge  B -> E
+26 :     OnDiscoverVertex  E
+27 :       OnFinishVertex  B
+28 :      OnExamineVertex  C
+29 :        OnExamineEdge  C -> F
+30 :           OnTreeEdge  C -> F
+31 :     OnDiscoverVertex  F
+32 :        OnExamineEdge  C -> G
+33 :           OnTreeEdge  C -> G
+34 :     OnDiscoverVertex  G
+35 :       OnFinishVertex  C
+36 :      OnExamineVertex  D
+37 :       OnFinishVertex  D
+38 :      OnExamineVertex  E
+39 :        OnExamineEdge  E -> F
+40 :        OnNonTreeEdge  E -> F
+41 :     OnGrayTargetEdge  E -> F
+42 :        OnExamineEdge  E -> H
+43 :           OnTreeEdge  E -> H
+44 :     OnDiscoverVertex  H
+45 :       OnFinishVertex  E
+46 :      OnExamineVertex  F
+47 :       OnFinishVertex  F
+48 :      OnExamineVertex  G
+49 :        OnExamineEdge  G -> H
+50 :        OnNonTreeEdge  G -> H
+51 :     OnGrayTargetEdge  G -> H
+52 :       OnFinishVertex  G
+53 :      OnExamineVertex  H
+54 :        OnExamineEdge  H -> A
+55 :        OnNonTreeEdge  H -> A
+56 :     OnBlackTargeEdge  H -> A
+57 :       OnFinishVertex  H
+
+
+DFS
+00 :   OnInitializeVertex  A
+01 :   OnInitializeVertex  B
+02 :   OnInitializeVertex  C
+03 :   OnInitializeVertex  D
+04 :   OnInitializeVertex  E
+05 :   OnInitializeVertex  F
+06 :   OnInitializeVertex  G
+07 :   OnInitializeVertex  H
+08 :        OnStartVertex  A
+09 :     OnDiscoverVertex  A
+10 :        OnExamineEdge  A -> B
+11 :           OnTreeEdge  A -> B
+12 :     OnDiscoverVertex  B
+13 :        OnExamineEdge  B -> A
+14 :           OnBackEdge  B -> A
+15 :  OnFinishNonTreeEdge  B -> A
+16 :        OnExamineEdge  B -> D
+17 :           OnTreeEdge  B -> D
+18 :     OnDiscoverVertex  D
+19 :       OnFinishVertex  D
+20 :     OnFinishTreeEdge  B -> D
+21 :        OnExamineEdge  B -> E
+22 :           OnTreeEdge  B -> E
+23 :     OnDiscoverVertex  E
+24 :        OnExamineEdge  E -> F
+25 :           OnTreeEdge  E -> F
+26 :     OnDiscoverVertex  F
+27 :       OnFinishVertex  F
+28 :     OnFinishTreeEdge  E -> F
+29 :        OnExamineEdge  E -> H
+30 :           OnTreeEdge  E -> H
+31 :     OnDiscoverVertex  H
+32 :        OnExamineEdge  H -> A
+33 :           OnBackEdge  H -> A
+34 :  OnFinishNonTreeEdge  H -> A
+35 :       OnFinishVertex  H
+36 :     OnFinishTreeEdge  E -> H
+37 :       OnFinishVertex  E
+38 :     OnFinishTreeEdge  B -> E
+39 :       OnFinishVertex  B
+40 :     OnFinishTreeEdge  A -> B
+41 :        OnExamineEdge  A -> C
+42 :           OnTreeEdge  A -> C
+43 :     OnDiscoverVertex  C
+44 :        OnExamineEdge  C -> F
+45 : OnForwardOrCrossEdge  C -> F
+46 :  OnFinishNonTreeEdge  C -> F
+47 :        OnExamineEdge  C -> G
+48 :           OnTreeEdge  C -> G
+49 :     OnDiscoverVertex  G
+50 :        OnExamineEdge  G -> H
+51 : OnForwardOrCrossEdge  G -> H
+52 :  OnFinishNonTreeEdge  G -> H
+53 :       OnFinishVertex  G
+54 :     OnFinishTreeEdge  C -> G
+55 :       OnFinishVertex  C
+56 :     OnFinishTreeEdge  A -> C
+57 :       OnFinishVertex  A
+
+
+dijkstra
+00 :   OnInitializeVertex  A
+01 :   OnInitializeVertex  B
+02 :   OnInitializeVertex  C
+03 :   OnInitializeVertex  D
+04 :   OnInitializeVertex  E
+05 :   OnInitializeVertex  F
+06 :   OnInitializeVertex  G
+07 :   OnInitializeVertex  H
+08 :     OnDiscoverVertex  A
+09 :      OnExamineVertex  A
+10 :        OnExamineEdge  A -> B
+11 :        OnEdgeRelaxed  A -> B
+12 :     OnDiscoverVertex  B
+13 :        OnExamineEdge  A -> C
+14 :        OnEdgeRelaxed  A -> C
+15 :     OnDiscoverVertex  C
+16 :       OnFinishVertex  A
+17 :      OnExamineVertex  B
+18 :        OnExamineEdge  B -> A
+19 :        OnExamineEdge  B -> D
+20 :        OnEdgeRelaxed  B -> D
+21 :     OnDiscoverVertex  D
+22 :        OnExamineEdge  B -> E
+23 :        OnEdgeRelaxed  B -> E
+24 :     OnDiscoverVertex  E
+25 :       OnFinishVertex  B
+26 :      OnExamineVertex  C
+27 :        OnExamineEdge  C -> F
+28 :        OnEdgeRelaxed  C -> F
+29 :     OnDiscoverVertex  F
+30 :        OnExamineEdge  C -> G
+31 :        OnEdgeRelaxed  C -> G
+32 :     OnDiscoverVertex  G
+33 :       OnFinishVertex  C
+34 :      OnExamineVertex  E
+35 :        OnExamineEdge  E -> F
+36 :        OnEdgeRelaxed  E -> F
+37 :        OnExamineEdge  E -> H
+38 :        OnEdgeRelaxed  E -> H
+39 :     OnDiscoverVertex  H
+40 :       OnFinishVertex  E
+41 :      OnExamineVertex  G
+42 :        OnExamineEdge  G -> H
+43 :        OnEdgeRelaxed  G -> H
+44 :       OnFinishVertex  G
+45 :      OnExamineVertex  D
+46 :       OnFinishVertex  D
+47 :      OnExamineVertex  F
+48 :       OnFinishVertex  F
+49 :      OnExamineVertex  H
+50 :        OnExamineEdge  H -> A
+51 :       OnFinishVertex  H
+pmap:  [0 0 0 1 1 4 2 6]
+dmap:  [0 1 1 2 2 3 2 3]
+
+
+dijkstraNoColorMap
+00 :   OnInitializeVertex  A
+01 :   OnInitializeVertex  B
+02 :   OnInitializeVertex  C
+03 :   OnInitializeVertex  D
+04 :   OnInitializeVertex  E
+05 :   OnInitializeVertex  F
+06 :   OnInitializeVertex  G
+07 :   OnInitializeVertex  H
+08 :     OnDiscoverVertex  A
+09 :      OnExamineVertex  A
+10 :        OnExamineEdge  A -> B
+11 :        OnEdgeRelaxed  A -> B
+12 :     OnDiscoverVertex  B
+13 :        OnExamineEdge  A -> C
+14 :        OnEdgeRelaxed  A -> C
+15 :     OnDiscoverVertex  C
+16 :       OnFinishVertex  A
+17 :      OnExamineVertex  B
+18 :        OnExamineEdge  B -> A
+19 :     OnEdgeNonRelaxed  B -> A
+20 :        OnExamineEdge  B -> D
+21 :        OnEdgeRelaxed  B -> D
+22 :     OnDiscoverVertex  D
+23 :        OnExamineEdge  B -> E
+24 :        OnEdgeRelaxed  B -> E
+25 :     OnDiscoverVertex  E
+26 :       OnFinishVertex  B
+27 :      OnExamineVertex  C
+28 :        OnExamineEdge  C -> F
+29 :        OnEdgeRelaxed  C -> F
+30 :     OnDiscoverVertex  F
+31 :        OnExamineEdge  C -> G
+32 :        OnEdgeRelaxed  C -> G
+33 :     OnDiscoverVertex  G
+34 :       OnFinishVertex  C
+35 :      OnExamineVertex  E
+36 :        OnExamineEdge  E -> F
+37 :        OnEdgeRelaxed  E -> F
+38 :        OnExamineEdge  E -> H
+39 :        OnEdgeRelaxed  E -> H
+40 :     OnDiscoverVertex  H
+41 :       OnFinishVertex  E
+42 :      OnExamineVertex  G
+43 :        OnExamineEdge  G -> H
+44 :        OnEdgeRelaxed  G -> H
+45 :       OnFinishVertex  G
+46 :      OnExamineVertex  D
+47 :       OnFinishVertex  D
+48 :      OnExamineVertex  F
+49 :       OnFinishVertex  F
+50 :      OnExamineVertex  H
+51 :        OnExamineEdge  H -> A
+52 :     OnEdgeNonRelaxed  H -> A
+53 :       OnFinishVertex  H
+pmap:  [0 0 0 1 1 4 2 6]
+dmap:  [0 1 1 2 2 3 2 3]
+
+
+astar
+00 :   OnInitializeVertex  A
+01 :   OnInitializeVertex  B
+02 :   OnInitializeVertex  C
+03 :   OnInitializeVertex  D
+04 :   OnInitializeVertex  E
+05 :   OnInitializeVertex  F
+06 :   OnInitializeVertex  G
+07 :   OnInitializeVertex  H
+08 :     OnDiscoverVertex  A
+09 :      OnExamineVertex  A
+10 :        OnExamineEdge  A -> B
+11 :        OnEdgeRelaxed  A -> B
+12 :     OnDiscoverVertex  B
+13 :        OnExamineEdge  A -> C
+14 :        OnEdgeRelaxed  A -> C
+15 :     OnDiscoverVertex  C
+16 :       OnFinishVertex  A
+17 :      OnExamineVertex  B
+18 :        OnExamineEdge  B -> A
+19 :     OnEdgeNonRelaxed  B -> A
+20 :        OnExamineEdge  B -> D
+21 :        OnEdgeRelaxed  B -> D
+22 :     OnDiscoverVertex  D
+23 :        OnExamineEdge  B -> E
+24 :        OnEdgeRelaxed  B -> E
+25 :     OnDiscoverVertex  E
+26 :       OnFinishVertex  B
+27 :      OnExamineVertex  C
+28 :        OnExamineEdge  C -> F
+29 :        OnEdgeRelaxed  C -> F
+30 :     OnDiscoverVertex  F
+31 :        OnExamineEdge  C -> G
+32 :        OnEdgeRelaxed  C -> G
+33 :     OnDiscoverVertex  G
+34 :       OnFinishVertex  C
+35 :      OnExamineVertex  E
+36 :        OnExamineEdge  E -> F
+37 :        OnEdgeRelaxed  E -> F
+38 :        OnExamineEdge  E -> H
+39 :        OnEdgeRelaxed  E -> H
+40 :     OnDiscoverVertex  H
+41 :       OnFinishVertex  E
+42 :      OnExamineVertex  G
+43 :        OnExamineEdge  G -> H
+44 :        OnEdgeRelaxed  G -> H
+45 :       OnFinishVertex  G
+46 :      OnExamineVertex  D
+47 :       OnFinishVertex  D
+48 :      OnExamineVertex  H
+49 :        OnExamineEdge  H -> A
+50 :     OnEdgeNonRelaxed  H -> A
+51 :       OnFinishVertex  H
+52 :      OnExamineVertex  F
+53 :       OnFinishVertex  F
+pmap:  [0 0 0 1 1 4 2 6]
+dmap:  [0 1 1 2 2 3 2 3]
+
+
+astar tree
+00 :   OnInitializeVertex  A
+01 :   OnInitializeVertex  B
+02 :   OnInitializeVertex  C
+03 :   OnInitializeVertex  D
+04 :   OnInitializeVertex  E
+05 :   OnInitializeVertex  F
+06 :   OnInitializeVertex  G
+07 :   OnInitializeVertex  H
+08 :     OnDiscoverVertex  A
+09 :      OnExamineVertex  A
+10 :        OnExamineEdge  A -> B
+11 :        OnEdgeRelaxed  A -> B
+12 :     OnDiscoverVertex  B
+13 :        OnExamineEdge  A -> C
+14 :        OnEdgeRelaxed  A -> C
+15 :     OnDiscoverVertex  C
+16 :       OnFinishVertex  A
+17 :      OnExamineVertex  B
+18 :        OnExamineEdge  B -> A
+19 :     OnEdgeNonRelaxed  B -> A
+20 :        OnExamineEdge  B -> D
+21 :        OnEdgeRelaxed  B -> D
+22 :     OnDiscoverVertex  D
+23 :        OnExamineEdge  B -> E
+24 :        OnEdgeRelaxed  B -> E
+25 :     OnDiscoverVertex  E
+26 :       OnFinishVertex  B
+27 :      OnExamineVertex  C
+28 :        OnExamineEdge  C -> F
+29 :        OnEdgeRelaxed  C -> F
+30 :     OnDiscoverVertex  F
+31 :        OnExamineEdge  C -> G
+32 :        OnEdgeRelaxed  C -> G
+33 :     OnDiscoverVertex  G
+34 :       OnFinishVertex  C
+35 :      OnExamineVertex  E
+36 :        OnExamineEdge  E -> F
+37 :        OnEdgeRelaxed  E -> F
+38 :     OnDiscoverVertex  F
+39 :        OnExamineEdge  E -> H
+40 :        OnEdgeRelaxed  E -> H
+41 :     OnDiscoverVertex  H
+42 :       OnFinishVertex  E
+43 :      OnExamineVertex  G
+44 :        OnExamineEdge  G -> H
+45 :        OnEdgeRelaxed  G -> H
+46 :     OnDiscoverVertex  H
+47 :       OnFinishVertex  G
+48 :      OnExamineVertex  D
+49 :       OnFinishVertex  D
+50 :      OnExamineVertex  F
+51 :       OnFinishVertex  F
+52 :      OnExamineVertex  H
+53 :        OnExamineEdge  H -> A
+54 :     OnEdgeNonRelaxed  H -> A
+55 :       OnFinishVertex  H
+pmap:  [0 0 0 1 1 4 2 6]
+dmap:  [0 1 1 2 2 3 2 3]
